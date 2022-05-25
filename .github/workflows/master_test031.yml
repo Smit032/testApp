@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_256c2d6ec2d64f24a2b76203f82971ae }}/kk032/test2:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_256c2d6ec2d64f24a2b76203f82971ae }}/test2:latest
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'test031'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_894fcde57e8f472b971a026dd447a517 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_256c2d6ec2d64f24a2b76203f82971ae }}/kk032/test2:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_256c2d6ec2d64f24a2b76203f82971ae }}/test2:latest'
